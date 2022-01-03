@@ -46,10 +46,10 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                 $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'],$_FILES['dosya']['size'],$_SESSION['id']);
                if($islem>0){
                    $yukle=$upload->yukle($_FILES);
-                   echo '<pre>';
-                   print_r($yukle);
+                  
                }else{
-                   die('ekleme yapılmadı');
+                header('Location:yukle.php?islem=false2');
+                exit;
                }
                 }else{
                 die('Post edilmedi');
@@ -71,16 +71,15 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                                 if(strlen($_FILES['dosya']['name'][$i]) > 1)
                                 {  move_uploaded_file($_FILES['dosya']['tmp_name'][$i],$baslik."/".$name);
                                     $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'][$i],$_FILES['dosya']['size'][$i],$_SESSION['id']);
-                                    echo '<pre>';
-                                    print_r($islem);
+                                   
                                 }
                             }
-                            echo "Folder is successfully uploaded";
-                            echo '<pre>';
-                            print_r($islem);
+                            header('Location:yukle.php?islem=true');
+                exit;
                         }
                         else
-                            echo "Upload folder name is empty";
+                        header('Location:yukle.php?islem=false');
+                        exit;
                     }
                     break;
 default: die('herhangi bir işlem yapılmadı'); break;

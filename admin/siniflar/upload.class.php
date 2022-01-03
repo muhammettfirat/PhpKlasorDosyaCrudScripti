@@ -28,9 +28,11 @@ return $this->lastInsertId() ;
                             if(!is_dir($baslik)) mkdir($baslik);
             $dosya_adi=$data['dosya']['name'];
             if(move_uploaded_file($tmp, $baslik.'/'.$dosya_adi)){
-                echo 'taşındı';
+                header('Location:yukle.php?islem=true');
+                exit;
             }else{
-                echo 'taşınamadı';
+                header('Location:yukle.php?islem=false');
+                exit;
             }
 
         }
