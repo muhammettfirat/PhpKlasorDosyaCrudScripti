@@ -1,0 +1,21 @@
+body{padding: 0px;margin: 0px;font:normal normal 14px Arial;background :#e5e5e5;}
+.temizle{clear: both;display: block;}
+
+#cerceve{width: 960px;height: auto;padding: 10px;background: #fff;margin: 20px auto;}
+#ust_kisim{width:900px ;padding: 30px;background: #36A5C9;text-align: center;}
+#alt_kisim{width: 940px;padding: 10px;background: #36A5C9;text-align: center;}
+#icerik{width: 960px;margin: 20px auto;background: #fff;}
+#sol_kisim{width: 300px;margin-right: 10px;float: left;}
+.menu{list-style:none ;padding: 0px;margin: 0px;}  
+.menu li{margin-bottom: 2px;}
+.menu li a{display: block;padding: 10px;background: #36A5C9;text-decoration: none ;color: #fff;}
+.menu li a:hover{background: #000;color: #fff;}
+#sag_kisim{width: 650px;float :left;background:pink;}
+#sag_kisim h3{background:#36A5C9;padding: 10px;margin: 0px;font: normal normal 14px Arial;color: #fff;}
+#sag_kisim .sag_icerik{background:#e5e5e5e5;padding: 10px;}
+#login{width: 300px;height: auto;margin: 0px auto;}
+table{width:100% ;border-collapse:collapse ;}
+table td{padding: 5px;}
+table caption{background-color:#36A5C9 ;padding: 10px;color: #fff;}
+.sagayasla{text-align: right;}
+.w150{width: 150px;}
