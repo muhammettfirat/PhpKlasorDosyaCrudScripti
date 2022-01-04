@@ -27,10 +27,11 @@
 <div id="sol_kisim">
 <ul class="menu">
 <li><a href="index.php">Ana Sayfa</a></li>
-<li><a href="ayarlar.php">Ayarlar</a></li>
 <li><a href="kullanici_ekle.php">Kullanıcı Ekle</a></li>
-<li><a href="yukle.php">Dosya Yükle</a></li>
 <li><a href="dosyalar.php">Yüklenen Dosyalar</a></li>
+<li><a href="folder.php">Klasör Yükle</a></li>
+<li><a href="yukle.php">Dosya Yükle</a></li>
+<li><a href="ayarlar.php">Ayarlar Sayfası</a></li>
 <li><a href="cikis_yap.php">Çıkış Yap</a></li>
 </ul>
 </div>

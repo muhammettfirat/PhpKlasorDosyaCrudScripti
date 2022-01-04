@@ -22,10 +22,9 @@ return $this->lastInsertId() ;
 
     public function yukle($data){
         if($data['dosya']['size'] >0  && $data['dosya']['error'] == 0){
-           
             $tmp= $data['dosya']['tmp_name'];
             $baslik=$_POST['baslik'];
-                            if(!is_dir($baslik)) mkdir($baslik);
+            if(!is_dir($baslik)) mkdir($baslik);
             $dosya_adi=$data['dosya']['name'];
             if(move_uploaded_file($tmp, $baslik.'/'.$dosya_adi)){
                 header('Location:yukle.php?islem=true');

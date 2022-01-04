@@ -19,3 +19,5 @@ table td{padding: 5px;}
 table caption{background-color:#36A5C9 ;padding: 10px;color: #fff;}
 .sagayasla{text-align: right;}
 .w150{width: 150px;}
+.dos tr{background:#fff}
+.dos th{background:#36A5C9; color:#fff; font-size: 12px;padding: 2px;margin: 2px;}
