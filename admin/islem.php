@@ -43,7 +43,7 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                 require_once 'siniflar/upload.class.php'; 
                 $upload=new Upload;
 
-                $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'],$_FILES['dosya']['size'],$_SESSION['id']);
+                $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'],$_FILES['dosya']['size'],$_SESSION['id'],$_FILES['dosya']['type']);
                if($islem>0){
                    $yukle=$upload->yukle($_FILES);
                   
@@ -70,7 +70,7 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                         {
                                 if(strlen($_FILES['dosya']['name'][$i]) > 1)
                                 {  move_uploaded_file($_FILES['dosya']['tmp_name'][$i],$baslik."/".$name);
-                                    $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'][$i],$_FILES['dosya']['size'][$i],$_SESSION['id']);
+                                    $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'][$i],$_FILES['dosya']['size'][$i],$_SESSION['id'],$_FILES['dosya']['type'][$i]);
                                    
                                 }
                             }

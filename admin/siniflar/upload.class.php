@@ -6,16 +6,17 @@ class Upload extends Database{
         parent::__construct();
         
     }
-    public function ekle($baslik,$dosya,$boyut,$yukleyen){
+    public function ekle($baslik,$dosya,$boyut,$yukleyen,$mime){
 
 
-$sorgu = $this->prepare("INSERT INTO dosyalar (dosya_baslik,dosya_adi,dosya_boyut,dosya_yukleyen)
-VALUES (:baslik, :adi, :boyut, :yukleyen)");
+$sorgu = $this->prepare("INSERT INTO dosyalar (dosya_baslik,dosya_adi,dosya_boyut,dosya_yukleyen,dosya_mime)
+VALUES (:baslik, :adi, :boyut, :yukleyen,:mime)");
 $sorgu->execute(array(
     'baslik'=>$baslik,
     'adi'=>$dosya,
     'boyut'=>$boyut,
-    'yukleyen'=>$yukleyen
+    'yukleyen'=>$yukleyen,
+    'mime'=>$mime
 ));
 return $this->lastInsertId() ;
     }
