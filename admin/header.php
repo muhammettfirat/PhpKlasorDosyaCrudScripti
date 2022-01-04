@@ -1,6 +1,5 @@
 <?php 
     require_once 'config.php';
-   
     if (Login::girisKontrol() !=true){
         header('Location:login.php?x');
         exit;
@@ -9,14 +8,11 @@
 <!doctype html>
 
 <html>
-
     <head>
-  
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 <title>Admin Paneli - tolgahanbasturk.com</title>
     </head>
-
     <body>
 <div id="cerceve">
 

@@ -1,21 +1,28 @@
 <?php require_once 'header.php';?>
 <h3>Dosyalar</h3>
 <div class="sag_icerik">
-    <table class="dos">
+    <table class="dosyalar">
         <tr>
-           <th>Dosya ID </th> 
-           <th>Dosya Adı </th> 
-           <th>Dosya Tipi </th> 
-           <th>Eklenme Tarihi </th> 
-           <th>İndirilme </th> 
+        <th>ID</th> 
+        <th>Dosya Adı</th> 
+        <th>Dosya Tipi</th> 
+        <th>Eklenme Tarihi</th> 
+        <th>İndirilme</th> 
+        <th>Detay</th> 
         </tr>
+        <?php
+        $dosyalar=$site->dosyalar(0,20);
+        foreach ($dosyalar as $dosya):
+        ?>
         <tr>
-           <td>1 </td> 
-           <td>index.php</td> 
-           <td>PHP Dosyası </td> 
-           <td>2022-01-04 01:25</td> 
-           <td>117</td> 
+        <td width="20"><?php echo $dosya->dosya_id?></td> 
+        <td><?php echo $dosya->dosya_baslik?></td> 
+        <td width="110">dosya türü</td> 
+        <td width="140"><?php echo $dosya->dosya_eklenme?></td> 
+        <td width="50"><?php echo $dosya->dosya_indirilme?></td> 
+        <td align="center" width="20"><a href="incele.php?dosya=<?php echo $dosya->dosya_id?>"><img src="img/detay.png"/></a></td> 
         </tr>
+        <?php endforeach; ?>
     </table>
     </div>
-<?php require_once 'footer.php';?>
+<?php require_once 'footer.php'; ?>

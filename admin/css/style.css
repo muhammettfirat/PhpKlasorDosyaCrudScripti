@@ -14,10 +14,15 @@ body{padding: 0px;margin: 0px;font:normal normal 14px Arial;background :#e5e5e5;
 #sag_kisim h3{background:#36A5C9;padding: 10px;margin: 0px;font: normal normal 14px Arial;color: #fff;}
 #sag_kisim .sag_icerik{background:#e5e5e5e5;padding: 10px;}
 #login{width: 300px;height: auto;margin: 0px auto;}
-table{width:100% ;border-collapse:collapse ;}
+table{width:100% ;}
 table td{padding: 5px;}
 table caption{background-color:#36A5C9 ;padding: 10px;color: #fff;}
 .sagayasla{text-align: right;}
 .w150{width: 150px;}
-.dos tr{background:#fff}
-.dos th{background:#36A5C9; color:#fff; font-size: 12px;padding: 2px;margin: 2px;}
+
+.dosyalar th{background:#36A5C9; color:#fff; font-size: 12px;padding: 3px;margin: 1px;}
+.dosyalar td{font-size: 12px;padding: 3px!important;}
+.dosyalar tr:nth-child(2n){background: #d5e4f8;}
+.dosyalar tr:nth-child(2n+1){background: #eceff3;}
+.dosyalar tr:hover{background: #a2f3c6;}
+.dosyalar td img{width: 16px;height: 16px; border: none!important;}
