@@ -20,8 +20,8 @@ table caption{background-color:#36A5C9 ;padding: 10px;color: #fff;}
 .sagayasla{text-align: right;}
 .w150{width: 150px;}
 
-.dosyalar th{background:#36A5C9; color:#fff; font-size: 12px;padding: 3px;margin: 1px;}
-.dosyalar td{font-size: 12px;padding: 3px!important;}
+.dosyalar th{background:#36A5C9; color:#fff; font-size: 12px;padding: 5px;margin: 1px;}
+.dosyalar td{font-size: 12px;}
 .dosyalar tr:nth-child(2n){background: #d5e4f8;}
 .dosyalar tr:nth-child(2n+1){background: #eceff3;}
 .dosyalar tr:hover{background: #a2f3c6;}
