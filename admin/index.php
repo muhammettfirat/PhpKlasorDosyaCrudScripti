@@ -1,5 +1,5 @@
 <?php require_once 'header.php';?>
-    <h3>Anasayfa</h3>
+    <h3>Anasayfa indirme silme 8. 9. videos</h3>
     <div class="sag_icerik">
     <p>Hoşgeldiniz <?=$_SESSION['kullanici']?>,</p>
     <ul>

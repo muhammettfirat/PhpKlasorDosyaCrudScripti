@@ -82,5 +82,23 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                         exit;
                     }
                     break;
+                    case 'sil': 
+                        $dosya=isset($_GET['dosya']) ? $_GET['dosya']:NULL;
+                        if($dosya==NULL){
+                            header('Location:dosyalar.php');
+                            exit;
+                        }else{
+                            $sil=$site->sil('dosyalar','dosya_id=', $dosya);
+                    
+                       /* if($sil>0){
+                                header('Location:dosyalar.php');
+                                exit;
+                            }else{
+                                header('Location:icele.php?dosya='.$dosya);
+                                exit;
+                        } */
+                
+                    }
+                        break;
 default: die('herhangi bir işlem yapılmadı'); break;
 } 

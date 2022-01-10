@@ -41,9 +41,9 @@ $dosya= $site->dosya($id);
         <tr>
             <td class="sagayasla w150">&nbsp;</td>
             <td>
-                <input type="button" name="indir" value="İndir"/>
+                <input type="button" onclick="window.location='../index.php?dosya=<?=$id?>'" name="indir" value="İndir"/>
                 <input type="button" name="düzenle" value="Düzenle"/>
-                <input type="button" name="sil" value="Sil"/>
+                <input type="button" onclick="window.location='../islem.php?islem=sil&dosya=<?=$id?>'" name="sil" value="Sil"/>
         </td>
         </tr>
     </table>

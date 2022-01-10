@@ -27,7 +27,8 @@ return $this->lastInsertId() ;
             $baslik=$_POST['baslik'];
             if(!is_dir($baslik)) mkdir($baslik);
             $dosya_adi=$data['dosya']['name'];
-            if(move_uploaded_file($tmp, $baslik.'/'.$dosya_adi)){
+
+            if(move_uploaded_file($tmp,$baslik.'/'.$dosya_adi)){
                 header('Location:yukle.php?islem=true');
                 exit;
             }else{
