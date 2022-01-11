@@ -24,21 +24,20 @@ $sorgu->execute();
 return true;
         }
         public function sil($tablo, $sutun, $kosul){
+           
             $dosya=$this->dosya($kosul);
             $sorgu =$this->exec("DELETE FROM  $tablo WHERE $sutun='$kosul'");
+       
+            
         if($sorgu>0){
-            require_once 'admin/siniflar/veritabani.class.php';
-            require_once 'admin/siniflar/site.class.php';
-            $site= new Site;
-            $klasör=$site->dosya($id);
-               
-        $klasör_yolu= $klasör->dosya_baslik;//veritabanından değer gelecek
-       // $dosya_ismi=$dosya->dosya_adi;//veritabanından değer gelecek
-        $indirme_yolu='C:/xampp/htdocs/Download/admin/'.$klasör_yolu;
-            unlink($indirme_yolu.$dosya->dosya_adi);
+         
+         
+            $silme=  unlink('C:/xammp/htdocs/Download/admin/'.$dosya->dosya_baslik.$dosya->dosya_adi);
+               if($silme){echo "başarılı";}else{header('Location:dosyalar.php');echo "olmadı";}
+           
             
         }
-         
+         return $sorgu;
                     }
 
         public function dosyaBoyutu($byte){

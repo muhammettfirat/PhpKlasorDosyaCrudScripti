@@ -1,6 +1,7 @@
 <?php require_once 'header.php';
 $id=isset($_GET['dosya']) ? (int)$_GET['dosya'] : NULL;
 $dosya= $site->dosya($id);
+
 ?>
 
 <h3>Dosya Detayları</h3>
@@ -41,9 +42,10 @@ $dosya= $site->dosya($id);
         <tr>
             <td class="sagayasla w150">&nbsp;</td>
             <td>
+    
                 <input type="button" onclick="window.location='../index.php?dosya=<?=$id?>'" name="indir" value="İndir"/>
                 <input type="button" name="düzenle" value="Düzenle"/>
-                <input type="button" onclick="window.location='../islem.php?islem=sil&dosya=<?=$id?>'" name="sil" value="Sil"/>
+                <input type="button" onclick="window.location='../admin/islem.php?islem=sil&dosya=<?=$id?>'" name="sil" value="Sil"/>
         </td>
         </tr>
     </table>
