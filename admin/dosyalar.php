@@ -12,6 +12,7 @@
         </tr>
         <?php
         $dosyalar=$site->dosyalar(0,20);
+       if (count($dosyalar)>0):
         foreach ($dosyalar as $dosya):
         ?>
         <tr>
@@ -22,7 +23,9 @@
         <td width="50"><?php echo $dosya->dosya_indirilme?></td> 
         <td align="center" width="20"><a href="incele.php?dosya=<?php echo $dosya->dosya_id?>"><img src="img/detay.png"/></a></td> 
         </tr>
-        <?php endforeach; ?>
+        <?php endforeach;else: ?>
+            <tr><td colspan="6"align="center">Hiç dosya yüklenmemiş</td></tr>
+        <?php endif; ?>
     </table>
     </div>
 <?php require_once 'footer.php'; ?>

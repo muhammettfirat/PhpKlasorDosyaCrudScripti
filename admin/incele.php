@@ -1,12 +1,11 @@
 <?php require_once 'header.php';
 $id=isset($_GET['dosya']) ? (int)$_GET['dosya'] : NULL;
 $dosya= $site->dosya($id);
-
 ?>
 
 <h3>Dosya Detayları</h3>
 <div class="sag_icerik">
-<?php if($id==NULL):?>
+<?php if($id==NULL || $dosya==false):?>
 <p>Geçersiz Dosya Yolu</p>
     <?php else:?>
 

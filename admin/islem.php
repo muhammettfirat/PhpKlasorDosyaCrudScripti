@@ -89,8 +89,8 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                             exit;
                         }else{
                     $sil=$site->sil('dosyalar','dosya_id',$dosya);
-                   if($sil>0){
-                                header('Location:dosyalar.php');
+            if($sil>0){
+                               header('Location:dosyalar.php');
                                 exit;
                             }else{
                                 header('Location:incele.php?dosya='.$dosya);

@@ -32,7 +32,7 @@ return true;
         if($sorgu>0){
          
          
-            $silme=  unlink('C:/xammp/htdocs/Download/admin/'.$dosya->dosya_baslik.$dosya->dosya_adi);
+            $silme=  unlink('C:/xammp/htdocs/Download/admin/'.$dosya->dosya_baslik.'/'.$dosya->dosya_adi);
                if($silme){echo "başarılı";}else{header('Location:dosyalar.php');echo "olmadı";}
            
             
