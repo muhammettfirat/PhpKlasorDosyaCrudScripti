@@ -10,7 +10,10 @@ if($id==NULL){
     $dosya=$site->dosya($id);
        
 $klasör_yolu= $dosya->dosya_baslik;//veritabanından değer gelecek
-$dosya_ismi=$dosya->dosya_adi;//veritabanından değer gelecek
+$dosya_ismi=$dosya->dosya_adi;
+$ek='tolgahanbasturkhukuk';         //veritabanından değer gelecek
+$dosya_adıı=$klasör_yolu.$dosya_ismi;
+$dosya_base=substr($dosya_adıı,0,strlen($ek)) == $ek ? $dosya_adıı : $ek.'-'.$dosya_adıı;
 $indirme_yolu='C:/xampp/htdocs/Download/admin/'.$klasör_yolu.'/'.$dosya_ismi;
 header("Expires:0");
 header("Last-Modified: ". gmdate("d.m.Y H:i:s")."GMT");
@@ -19,7 +22,7 @@ header("Cache-Control: post-chech=0,pre-chech=0",false);
 header("Pragma:no-cache");
 header("Content-Type: ".$dosya->dosya_mime);//veritabanından değer gelecek
 header("Content-Lenght: ".$dosya->dosya_boyut);//veritabanından değer gelecek
-header("Content-Disposition: attachment; filename=". basename($dosya_ismi));
+header("Content-Disposition: attachment; filename=". basename($dosya_base));
 
 $site->guncelle('dosyalar','dosya_indirilme =dosya_indirilme + 1',"dosya_id='".$id."'");
 readfile($indirme_yolu);

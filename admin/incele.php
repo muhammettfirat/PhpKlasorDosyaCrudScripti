@@ -43,8 +43,8 @@ $dosya= $site->dosya($id);
             <td>
     
                 <input type="button" onclick="window.location='../index.php?dosya=<?=$id?>'" name="indir" value="İndir"/>
-                <input type="button" name="düzenle" value="Düzenle"/>
-                <input type="button" onclick="window.location='../admin/islem.php?islem=sil&dosya=<?=$id?>'" name="sil" value="Sil"/>
+                <input type="button"  onclick="window.location='duzenle.php?dosya=<?=$id?>'" name="düzenle" value="Düzenle"/>
+                <input type="button" onclick="window.location='islem.php?islem=sil&dosya=<?=$id?>'" name="sil" value="Sil"/>
         </td>
         </tr>
     </table>

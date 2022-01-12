@@ -24,6 +24,7 @@
 <ul class="menu">
 <li><a href="index.php">Ana Sayfa</a></li>
 <li><a href="kullanici_ekle.php">Kullanıcı Ekle</a></li>
+<li><a href="kullanicilar.php">Kullanıcılar</a></li>
 <li><a href="dosyalar.php">Yüklenen Dosyalar</a></li>
 <li><a href="folder.php">Klasör Yükle</a></li>
 <li><a href="yukle.php">Dosya Yükle</a></li>

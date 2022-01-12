@@ -82,6 +82,28 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                         exit;
                     }
                     break;
+
+
+                    case 'dosyaGuncelle':
+                        $dosya=isset($_GET['dosya']) ? $_GET['dosya']:NULL; 
+                        if($dosya==NULL){
+                            header('Location:dosyalar.php');
+                            exit;
+                        }else{
+                    $dosyaGuncelle=$site->guncelle('dosyalar',"dosya_baslik='".$_POST['baslik']."'","dosya_id='".$dosya."'");
+                    $dosyaGuncel=$site->guncelle('dosyalar',"dosya_adi='".$_POST['adi']."'","dosya_id='".$dosya."'");
+            if($dosyaGuncelle){
+                header('Location:incele.php?dosya='.$dosya);
+                exit;
+                              
+                            }else{
+                                header('Location:dosyalar.php');
+                                exit;
+                        } 
+                    }
+                        break;
+
+
                 case 'sil':             
                     $dosya=isset($_GET['dosya']) ? $_GET['dosya']:NULL; 
                         if($dosya==NULL){
@@ -98,5 +120,7 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                         } 
                     }
                         break;
+
+
 default: die('herhangi bir işlem yapılmadı'); break;
 } 
