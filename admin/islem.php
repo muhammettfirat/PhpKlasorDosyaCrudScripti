@@ -18,6 +18,62 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
         die('Post edilmedi');
         }
         break;
+
+        case 'kullanici_sil':
+           $kullanici=isset($_GET['kullanici']) ? $_GET['kullanici']:NULL; 
+            if($kullanici==NULL){
+                header('Location:kullanici.php');
+                exit;
+            }else{
+                $kullanici2=$site->kullanici($kullanici);
+                if($_SESSION['id'] != $kullanici2->kullanici_id ) {
+        $sil=$site->sil('kullanicilar','kullanici_id', $kullanici);
+if($sil>0){
+                   header('Location:kullanicilar.php');
+                    exit;
+                }else{
+                    header('Location:kullanici.php?id='.$kullanici);
+                    exit;
+            } 
+        }else{
+            header('Location:kullanici.php?id='.$kullanici);
+            exit;
+        }
+        }
+            break;
+
+
+            case 'kullaniciGuncelle':
+
+                $kullanici=isset($_GET['kullanici']) ? $_GET['kullanici']:NULL; 
+                if($kullanici==NULL){
+                    header('Location:kullanicilar.php');
+                    exit;
+                }else{
+                    $kullanici_adi=$_POST['kullanici'];
+                    $kullanici_sifre=$_POST['parola'];
+                    $kullanici_mail=$_POST['eposta'];
+                    $kullanici_yetki=$_POST['yetki'];
+                    $sorgu='';
+                    $sorgu .= " kullanici_adi = '$kullanici_adi'";
+                    $sorgu .= ", kullanici_mail = '$kullanici_mail'";
+                    $sorgu .= ", kullanici_yetki = '$kullanici_yetki'";
+                    $xxx = trim($kullanici_sifre) != '' ? ", kullanici_sifre = '".md5($kullanici_sifre)."'": '' ;
+                    $sorgu .= $xxx;
+            
+            $kullaniciGuncelle=$site->guncelle('kullanicilar',"$sorgu","kullanici_id='$kullanici'");
+    if($kullaniciGuncelle){
+        header('Location:kullanici.php?id='.$kullanici);
+        exit;
+                    }else{
+                        header('Location:kullanicilar.php');
+                        exit;
+                } 
+            }
+                break;
+
+
+
             case 'login':
             if ($_POST) {
             $login = new Login;
@@ -44,13 +100,13 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                 $upload=new Upload;
 
                 $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'],$_FILES['dosya']['size'],$_SESSION['id'],$_FILES['dosya']['type']);
-               if($islem>0){
-                   $yukle=$upload->yukle($_FILES);
-                  
-               }else{
+            if($islem>0){
+                    $yukle=$upload->yukle($_FILES);
+                
+            }else{
                 header('Location:yukle.php?islem=false2');
                 exit;
-               }
+            }
                 }else{
                 die('Post edilmedi');
                 }
@@ -71,7 +127,7 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                                 if(strlen($_FILES['dosya']['name'][$i]) > 1)
                                 {  move_uploaded_file($_FILES['dosya']['tmp_name'][$i],$baslik."/".$name);
                                     $islem= $upload->ekle($_POST['baslik'],$_FILES['dosya']['name'][$i],$_FILES['dosya']['size'][$i],$_SESSION['id'],$_FILES['dosya']['type'][$i]);
-                                   
+                                
                                 }
                             }
                             header('Location:yukle.php?islem=true');
@@ -95,7 +151,7 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
             if($dosyaGuncelle){
                 header('Location:incele.php?dosya='.$dosya);
                 exit;
-                              
+                            
                             }else{
                                 header('Location:dosyalar.php');
                                 exit;
@@ -112,7 +168,7 @@ $islem= isset($_GET['islem']) ? $_GET['islem']:null;
                         }else{
                     $sil=$site->sil('dosyalar','dosya_id',$dosya);
             if($sil>0){
-                               header('Location:dosyalar.php');
+                        header('Location:dosyalar.php');
                                 exit;
                             }else{
                                 header('Location:incele.php?dosya='.$dosya);

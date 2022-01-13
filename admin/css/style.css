@@ -5,12 +5,12 @@ body{padding: 0px;margin: 0px;font:normal normal 14px Arial;background :#e5e5e5;
 #ust_kisim{width:900px ;padding: 30px;background: #36A5C9;text-align: center;}
 #alt_kisim{width: 940px;padding: 10px;background: #36A5C9;text-align: center;}
 #icerik{width: 960px;margin: 20px auto;background: #fff;}
-#sol_kisim{width: 300px;margin-right: 10px;float: left;}
+#sol_kisim{width: 200px;margin-right: 10px;float: left;}
 .menu{list-style:none ;padding: 0px;margin: 0px;}  
 .menu li{margin-bottom: 2px;}
 .menu li a{display: block;padding: 10px;background: #36A5C9;text-decoration: none ;color: #fff;}
 .menu li a:hover{background: #000;color: #fff;}
-#sag_kisim{width: 650px;float :left;background:pink;}
+#sag_kisim{width: 750px;float :left;background:pink;}
 #sag_kisim h3{background:#36A5C9;padding: 10px;margin: 0px;font: normal normal 14px Arial;color: #fff;}
 #sag_kisim .sag_icerik{background:#e5e5e5e5;padding: 10px;}
 #login{width: 300px;height: auto;margin: 0px auto;}

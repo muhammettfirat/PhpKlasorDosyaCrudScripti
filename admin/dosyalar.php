@@ -12,13 +12,13 @@
         </tr>
         <?php
         $dosyalar=$site->dosyalar(0,20);
-       if (count($dosyalar)>0):
+        if (count($dosyalar)>0):
         foreach ($dosyalar as $dosya):
         ?>
         <tr>
         <td width="20"><?php echo $dosya->dosya_id?></td> 
         <td><?php echo $dosya->dosya_baslik ?><br><?php echo  $dosya->dosya_adi?></td> 
-        <td width="110"><?php echo  $dosya->dosya_mime?></td> 
+        <td width="200"><?php echo  $dosya->dosya_mime?></td> 
         <td width="140"><?php echo $site->tarih($dosya->dosya_eklenme)?></td> 
         <td width="50"><?php echo $dosya->dosya_indirilme?></td> 
         <td align="center" width="20"><a href="incele.php?dosya=<?php echo $dosya->dosya_id?>"><img src="img/detay.png"/></a></td> 

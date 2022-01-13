@@ -6,15 +6,26 @@ class Site extends Database {
 parent::__construct();
     }
 
-    public function dosyalar($baslangıc, $limit){
+    public function kullanicilar($baslangıc, $limit){
 
-        $sorgu=$this->prepare("SELECT * FROM dosyalar ORDER BY dosya_eklenme LIMIT $baslangıc, $limit ");
+        $sorgu=$this->prepare("SELECT * FROM kullanicilar ORDER BY kullanici_id  ASC LIMIT $baslangıc, $limit ");
         $sorgu->execute();
 return $sorgu->fetchAll(PDO::FETCH_OBJ);
     }
-    
+    public function kullanici($id){
+        $sorgu=$this->prepare("SELECT * FROM kullanicilar WHERE kullanici_id = '$id'");
+        $sorgu->execute();
+return $sorgu->fetch(PDO::FETCH_OBJ);
+    }
+    public function dosyalar($baslangıc, $limit){
+
+        $sorgu=$this->prepare("SELECT * FROM dosyalar ORDER BY dosya_eklenme ASC LIMIT $baslangıc, $limit ");
+        $sorgu->execute();
+return $sorgu->fetchAll(PDO::FETCH_OBJ);
+    }
+   
         public function dosya($id){
-            $sorgu=$this->prepare("SELECT * FROM dosyalar WHERE dosya_id = '$id' ");
+            $sorgu=$this->prepare("SELECT * FROM dosyalar WHERE dosya_id = '$id'");
             $sorgu->execute();
     return $sorgu->fetch(PDO::FETCH_OBJ);
         }
